@@ -1,0 +1,21 @@
+{
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["react-app"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  // "plugins": ["react", "jsx-a11y", "airbnb-base"],
+  "rules": {
+    // "jsx-a11y/rule-name": 2,
+    // "react-hooks/rules-of-hooks": "error",
+    // "react-hooks/exhaustive-deps": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"],
+    "comma-dangle": "off",
+    "object-curly-newline": "off"
+  }
+}

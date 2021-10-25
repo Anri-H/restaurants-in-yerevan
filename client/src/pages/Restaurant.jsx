@@ -12,7 +12,7 @@ export default function Restaurant() {
     getRestaurant(id).then((res) => {
       setRestaurant(res);
     });
-  }, []);
+  }, [id]);
 
   return <>{restaurant && <RestaurantInfo restaurant={restaurant} />}</>;
 }

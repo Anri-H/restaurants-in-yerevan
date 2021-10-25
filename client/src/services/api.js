@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getRestaurants() {
   return axios
-    .get("http://localhost:5000/")
+    .get("https://restaurants-in-yerevan.herokuapp.com/")
     .then((res) => {
       console.log(res);
       return res;
@@ -12,7 +12,7 @@ export function getRestaurants() {
 
 export function getRestaurant(id) {
   return axios
-    .get(`http://localhost:5000/${id}`)
+    .get(`https://restaurants-in-yerevan.herokuapp.com/${id}`)
     .then((res) => {
       return res.data;
     })
@@ -21,7 +21,7 @@ export function getRestaurant(id) {
 
 export function addRestaurant(data) {
   return axios
-    .post("http://localhost:5000/", data)
+    .post("https://restaurants-in-yerevan.herokuapp.com/", data)
     .then((res) => {
       return res.data;
     })
@@ -30,7 +30,7 @@ export function addRestaurant(data) {
 
 export function addComment(id, data) {
   return axios
-    .post(`http://localhost:5000/comment/${id}`, data)
+    .post(`https://restaurants-in-yerevan.herokuapp.com/comment/${id}`, data)
     .then((res) => {
       return res.data;
     })

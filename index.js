@@ -26,7 +26,11 @@ if (process.env.NODE_ENV === "production") {
 }
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
   .then(() =>
     app.listen(PORT, () =>
       console.log(`Server Running on Port: http://localhost:${PORT}`)

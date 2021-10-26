@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch;
+  width: 100%;
+}
+
+.list {
+  background-color: #0009;
+  height: 500px;
+  overflow: auto;
+}

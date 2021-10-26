@@ -1,14 +1,21 @@
 .App {
   text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1574357283725-60b516ff37b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");
+  /* background-image: url("https://images.unsplash.com/photo-1585836730503-31301b14a38a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8eWVyZXZhbiUyQyUyMGFybWVuaWF8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.App-header {
+  background-color: #000000be;
+  min-height: 100vh;
+  max-width: 1000px;
   font-size: calc(10px + 2vmin);
   color: white;
 }

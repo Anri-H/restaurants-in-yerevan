@@ -6,10 +6,16 @@
   align-items: stretch;
   align-content: stretch;
   width: 100%;
+  padding: 10px;
 }
 
 .list {
-  background-color: #0009;
+  /* background-color: #0009; */
   height: 500px;
   overflow: auto;
+}
+
+.title {
+  margin: 10px;
+  padding: 20px;
 }

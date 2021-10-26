@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Top 5 Restaurants in Yerevan</h1>
+      <h1 className={styles.title}>Top 5 Restaurants in Yerevan</h1>
 
       {data && (
         <div className={styles.main}>

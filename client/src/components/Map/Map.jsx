@@ -19,42 +19,45 @@ export default function Map({ data }) {
   }, [data]);
 
   return (
-    <div>
-      <h2>Map</h2>
-      <div style={{ width: "600px", height: "500px" }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: "AIzaSyBoM0sE_jUh6dmEoHVertNZp1jGlweyAG8",
-          }}
-          defaultCenter={coords}
-          center={coords}
-          defaultZoom={14}
-          margin={[50, 50, 50, 50]}
-          options={{
-            disableDefaultUI: true,
-            zoomControl: true,
-            styles: mapStyles,
-          }}
-        >
-          {!data.length ? (
-            <RestaurantPopup
-              restaurant={data}
-              lat={data.geometry.lat}
-              lng={data.geometry.lng}
-            />
-          ) : (
-            data.map((restaurant) => {
-              return (
-                <RestaurantPopup
-                  restaurant={restaurant}
-                  lat={restaurant.geometry.lat}
-                  lng={restaurant.geometry.lng}
-                />
-              );
-            })
-          )}
-        </GoogleMapReact>
-      </div>
+    <div
+      style={{
+        width: "500px",
+        height: "500px",
+        padding: "10px",
+      }}
+    >
+      <GoogleMapReact
+        bootstrapURLKeys={{
+          key: "AIzaSyBoM0sE_jUh6dmEoHVertNZp1jGlweyAG8",
+        }}
+        defaultCenter={coords}
+        center={coords}
+        defaultZoom={14}
+        margin={[50, 50, 50, 50]}
+        options={{
+          disableDefaultUI: true,
+          zoomControl: true,
+          styles: mapStyles,
+        }}
+      >
+        {!data.length ? (
+          <RestaurantPopup
+            restaurant={data}
+            lat={data.geometry.lat}
+            lng={data.geometry.lng}
+          />
+        ) : (
+          data.map((restaurant) => {
+            return (
+              <RestaurantPopup
+                restaurant={restaurant}
+                lat={restaurant.geometry.lat}
+                lng={restaurant.geometry.lng}
+              />
+            );
+          })
+        )}
+      </GoogleMapReact>
     </div>
   );
 }

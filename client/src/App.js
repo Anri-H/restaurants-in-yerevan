@@ -10,7 +10,6 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <h1>Restaurants dfsfsfre Yerevan</h1>
               <Home />
             </Route>
             <Route path="/:id">

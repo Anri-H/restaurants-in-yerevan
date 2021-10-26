@@ -8,10 +8,12 @@ export default function RestaurantsCard({ restaurant }) {
 
   return (
     <div key={_id} className={styles.card}>
-      <h2>{name}</h2>
+      <h3>{name}</h3>
       <Rating ratingValue={rating} />
-      <p>{description}</p>
-      <Link to={`/${_id}`}>View Restaurant</Link>
+      <p className={styles.description}>{description}</p>
+      <Link to={`/${_id}`} className={styles.link}>
+        View Restaurant
+      </Link>
     </div>
   );
 }

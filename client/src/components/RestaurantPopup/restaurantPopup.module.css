@@ -1,0 +1,16 @@
+.popup {
+  width: 200px;
+  position: absolute;
+  top: -140px;
+  right: -130px;
+  background-color: #333;
+  padding: 10px;
+  z-index: 10;
+}
+
+.close {
+  position: absolute;
+  top: -13px;
+  right: 5px;
+  color: red;
+}

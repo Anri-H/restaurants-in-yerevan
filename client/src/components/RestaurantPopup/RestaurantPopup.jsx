@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Rating } from "react-simple-star-rating";
+import styles from "./restaurantPopup.module.css";
 
 export default function RestaurantPopup({
   lat,
@@ -14,24 +15,9 @@ export default function RestaurantPopup({
       style={{ cursor: "pointer", position: "relative" }}
     >
       {popup && (
-        <div
-          style={{
-            width: "200px",
-            position: "absolute",
-            top: "-140px",
-            right: "-130px",
-            backgroundColor: "#333",
-            padding: "10px",
-            zIndex: "10",
-          }}
-        >
+        <div className={styles.popup}>
           <h1
-            style={{
-              position: "absolute",
-              top: "-13px",
-              right: "5px",
-              color: "red",
-            }}
+            className={styles.close}
             onClick={(e) => {
               setPopup(false);
             }}

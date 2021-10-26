@@ -1,0 +1,53 @@
+.main {
+  padding: 20px;
+  margin: auto;
+  width: 80%;
+  background-color: rgba(240, 248, 255, 0.253);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(51, 51, 51, 0.363);
+  border-radius: 10px;
+}
+
+.title {
+  margin: 10px;
+}
+
+.input {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.651);
+  color: white;
+  font-size: 16px;
+}
+
+.button {
+  font-size: 16px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  background-color: rgb(196, 127, 1);
+  border-radius: 0 0 10px 10px;
+}
+
+.button:hover {
+  background-color: #532f00;
+}
+
+.comment {
+  margin: 10px;
+  padding: 10px;
+  min-height: 100px;
+  border: 2px solid #000;
+  position: relative;
+  text-align: start;
+}
+
+.author {
+  color: rgb(196, 127, 1);
+  border-bottom: 2px solid rgb(196, 127, 1);
+  margin-bottom: 10px;
+}
+
+.commentText {
+  font-size: 18px;
+}

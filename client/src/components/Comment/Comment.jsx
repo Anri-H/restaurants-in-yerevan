@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { addComment } from "../../services/api";
 import styles from "./comment.module.css";
 
 export default function Comment({ comments, id }) {
   const [comment, setComment] = useState({ name: "", comment: "" });
+  const [submit, setSubmit] = useState(false);
+  const [com, setCom] = useState(comments);
+
+  useEffect(() => {
+    setSubmit(comment.name && comment.comment);
+  }, [comment]);
 
   const handleChange = ({ target }) => {
     setComment({ ...comment, [target.name]: target.value });
   };
 
   const handleSubmit = () => {
-    addComment(id, comment);
+    addComment(id, comment).then((res) => setCom([...com, res]));
+    setComment({ name: "", comment: "" });
   };
 
   return (
@@ -20,6 +27,7 @@ export default function Comment({ comments, id }) {
         type="text"
         placeholder="Name"
         name="name"
+        value={comment.name}
         onChange={handleChange}
         className={styles.input}
       />
@@ -27,16 +35,21 @@ export default function Comment({ comments, id }) {
         name="comment"
         placeholder="Enter your comment"
         id=""
+        value={comment.comment}
         cols="30"
         rows="10"
         onChange={handleChange}
         className={styles.input}
       ></textarea>
-      <button className={styles.button} onClick={handleSubmit}>
+      <button
+        disabled={!submit}
+        className={styles.button}
+        onClick={handleSubmit}
+      >
         Submit
       </button>
-      {comments &&
-        comments.map(({ _id, name, comment }) => (
+      {com &&
+        com.map(({ _id, name, comment }) => (
           <div key={_id} className={styles.comment}>
             <h3 className={styles.author}>{name}</h3>
             <p className={styles.commentText}>{comment}</p>

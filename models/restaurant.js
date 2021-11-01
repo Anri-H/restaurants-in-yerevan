@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const geometryScheme = mongoose.Schema({
   lng: Number,
   lat: Number,
+  address: String,
 });
 
 const RestaurantScheme = mongoose.Schema({

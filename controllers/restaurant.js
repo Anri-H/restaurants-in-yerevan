@@ -20,8 +20,6 @@ export const getRestaurantById = async (req, res) => {
     const restaurantWithComments = await RestaurantModel.findById(id).populate(
       "comments"
     );
-    console.log(restaurantWithComments.populated("comment"));
-
     res.json(restaurantWithComments);
   } catch (error) {
     res.json(error);

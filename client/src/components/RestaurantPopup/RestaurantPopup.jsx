@@ -5,7 +5,7 @@ import styles from "./restaurantPopup.module.css";
 export default function RestaurantPopup({
   lat,
   lng,
-  restaurant: { name, description, rating },
+  restaurant: { name, image, rating, geometry },
 }) {
   const [popup, setPopup] = useState(false);
   return (
@@ -24,8 +24,9 @@ export default function RestaurantPopup({
           >
             X
           </h1>
+          <img src={image} width="100%" alt={name} />
           <h2>{name}</h2>
-          <p>{description}</p>
+          <p>{geometry.address}</p>
           <Rating ratingValue={rating} />
         </div>
       )}

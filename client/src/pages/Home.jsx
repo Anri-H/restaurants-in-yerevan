@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactLoading from "react-loading";
 import { getRestaurants } from "../services/api";
 import Map from "../components/Map/Map";
 import RestaurantsCard from "../components/RestaurantsCard/RestaurantsCard";
@@ -16,9 +17,9 @@ export default function Home() {
 
   return (
     <div>
-      <h1 className={styles.title}>Top 5 Restaurants in Yerevan</h1>
+      <h1 className={styles.title}>Top Restaurants in Yerevan</h1>
 
-      {data && (
+      {data ? (
         <div className={styles.main}>
           <div className={styles.list}>
             {data.map((restaurant, i) => (
@@ -29,6 +30,14 @@ export default function Home() {
           </div>
           <Map data={mapData ? mapData : data} />
         </div>
+      ) : (
+        <ReactLoading
+          type={"spin"}
+          color={"#ffffff"}
+          height={"20%"}
+          width={"20%"}
+          className={styles.loading}
+        />
       )}
     </div>
   );

@@ -7,7 +7,7 @@ const geometryScheme = mongoose.Schema({
 
 const RestaurantScheme = mongoose.Schema({
   name: String,
-  // image: String,
+  image: String,
   description: String,
   rating: Number,
   geometry: {
